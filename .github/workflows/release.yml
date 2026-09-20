@@ -1,0 +1,26 @@
+name: release
+
+# A tag builds, type-checks and publishes the tarball the dashboard serves.
+# Built by CI rather than uploaded by hand so the artefact always matches the
+# tag — a release built on somebody's laptop is one nobody can reproduce.
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '22' }
+      - run: npm install --no-package-lock
+      - run: npm run build
+      - run: npm pack --pack-destination .
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: '*.tgz'
+          generate_release_notes: true
