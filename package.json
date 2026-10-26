@@ -1,19 +1,56 @@
 {
   "name": "@basixllc/sdk",
-  "version": "1.0.0",
-  "description": "Upload media and send structured logs to BasiX.",
+  "version": "1.1.0",
+  "description": "Official BasiX SDK for Node and TypeScript: media upload to a CDN, presigned URLs and structured logs for FiveM servers, Discord bots and web panels. No dependencies.",
   "license": "MIT",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "exports": { ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" } },
-  "files": ["dist"],
-  "engines": { "node": ">=18" },
-  "repository": { "type": "git", "url": "git+https://github.com/BasiXLLC/sdk-typescript.git" },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BasiXLLC/sdk-typescript.git"
+  },
+  "homepage": "https://basix.agency/docs?utm_source=npm&utm_medium=referral&utm_campaign=sdk-typescript",
+  "bugs": {
+    "url": "https://github.com/BasiXLLC/sdk-typescript/issues"
+  },
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "typecheck": "tsc -p tsconfig.json --noEmit"
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "prepare": "tsc -p tsconfig.json"
   },
-  "devDependencies": { "typescript": "^5.9.0", "@types/node": "^20.0.0" },
-  "keywords": ["basix", "cdn", "fivem", "upload", "logs"]
+  "devDependencies": {
+    "typescript": "^5.9.0",
+    "@types/node": "^20.0.0"
+  },
+  "keywords": [
+    "basix",
+    "fivem",
+    "redm",
+    "cfx",
+    "image-hosting",
+    "media-hosting",
+    "cdn",
+    "upload",
+    "file-upload",
+    "presigned-url",
+    "screenshot",
+    "logs",
+    "logging",
+    "discord-bot",
+    "typescript",
+    "sdk"
+  ]
 }
